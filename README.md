@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RentabiliteFront
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# rentabilite-front
+Front angular pour l'application de calcul de rentabilité locative
+>>>>>>> cbaa2e867777df0c7168bfb495bb403774666dc7
