@@ -13,12 +13,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetailRentabiliteComponent } from './detail-rentabilite/detail-rentabilite.component'
 import { RentabiliteComponent } from './rentabilite/rentabilite.component';
 import { QuatreCentQuatreComponent } from './quatre-cent-quatre/quatre-cent-quatre.component';
+import { AuthGuard } from './services/auth-guard.service';
+
 
 const appRoutes: Routes = [
-  { path: 'rentabilite', component: RentabiliteViewComponent },
-  { path: 'rentabilite/:id', component: DetailRentabiliteComponent },
+  { path: 'rentabilite', canActivate: [AuthGuard] , component: RentabiliteViewComponent },
+  { path: 'rentabilite/:id', canActivate: [AuthGuard], component: DetailRentabiliteComponent },
   { path: 'authentification', component: AuthentificationComponent },
-  { path: '', component: RentabiliteViewComponent },
+  { path: '', component: AuthentificationComponent },
   { path: 'not-found', component: QuatreCentQuatreComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     RentabiliteService,
-    AuthentificationService
+    AuthentificationService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
