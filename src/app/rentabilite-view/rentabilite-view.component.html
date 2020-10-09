@@ -3,11 +3,13 @@
       <div class="col-xs-12">
         <h2>Calcul de rentabilité</h2>
         <ul class="list-group">
-        <app-rentabilite *ngFor="let loyer of loyers; let i = index"
-                                 [prixBien]="loyer.prix"
-                                 [index]="i">
+        <app-rentabilite *ngFor="let bien of biens; let i = index"
+                          [nom]="bien.name"
+                          [prixBien]="bien.prixBien"
+                          [index]="i"
+                          [id]="bien.id">
         </app-rentabilite>
         </ul>
       </div>
     </div>
-  </div>
+</div>

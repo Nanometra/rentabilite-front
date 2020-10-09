@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { RentabiliteComponent } from './rentabilite/rentabilite.component';
 import { RentabiliteService } from './services/rentabilite.service';
 import { RentabiliteViewComponent } from './rentabilite-view/rentabilite-view.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
-import { RouterModule, Routes } from '@angular/router'
+import { AuthentificationService } from './services/authentification.service';
+import { RouterModule, Routes } from '@angular/router';
+import { DetailRentabiliteComponent } from './detail-rentabilite/detail-rentabilite.component'
+import { RentabiliteComponent } from './rentabilite/rentabilite.component';
+import { QuatreCentQuatreComponent } from './quatre-cent-quatre/quatre-cent-quatre.component';
 
 const appRoutes: Routes = [
-  { path: 'rentabilite', component: RentabiliteViewComponent},
-  { path: 'authentification', component: AuthentificationComponent},
-  { path: '', component: RentabiliteViewComponent}
+  { path: 'rentabilite', component: RentabiliteViewComponent },
+  { path: 'rentabilite/:id', component: DetailRentabiliteComponent },
+  { path: 'authentification', component: AuthentificationComponent },
+  { path: '', component: RentabiliteViewComponent },
+  { path: 'not-found', component: QuatreCentQuatreComponent },
+  { path: '**', redirectTo: 'not-found' }
 ];
 
 
@@ -23,7 +29,9 @@ const appRoutes: Routes = [
     AppComponent,
     RentabiliteComponent,
     RentabiliteViewComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    DetailRentabiliteComponent,
+    QuatreCentQuatreComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    RentabiliteService
+    RentabiliteService,
+    AuthentificationService
   ],
   bootstrap: [AppComponent]
 })

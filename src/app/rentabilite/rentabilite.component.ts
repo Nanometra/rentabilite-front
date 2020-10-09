@@ -17,10 +17,13 @@ export class RentabiliteComponent implements OnInit {
   @Input() rentabilite: number;
   isRentable: boolean;
   @Input() index: number;
+  biens: any[];
+  @Input() nom: string;
 
   constructor(private rentabiliteService: RentabiliteService) { }
 
   ngOnInit(): void {
+    this.biens = this.rentabiliteService.biens;
   }
 
 

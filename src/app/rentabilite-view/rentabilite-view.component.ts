@@ -10,18 +10,20 @@ import { Loyer } from '../interface/loyer'
 export class RentabiliteViewComponent implements OnInit {
 
   @Input() id: number;
+  @Input() index: number;
   @Input() prixBien: number;
   loyers: Loyer[] = [];
   @Input() loyerAnnuelCalcule: number;
   @Input() loyerAnnuelIndique: number;
   @Input() rentabilite: number;
   isRentable: boolean;
-  @Input() index: number;
+  biens: any[];
 
   constructor(private rentabiliteService: RentabiliteService) { }
 
   ngOnInit(): void {
     this.loyers = this.rentabiliteService.loyers;
+    this.biens = this.rentabiliteService.biens;
   }
 
 }
