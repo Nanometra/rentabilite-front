@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RentabiliteViewComponent } from './rentabilite-view.component';
+import { DetailBienComponent } from './detail-bien.component';
 
-describe('RentabiliteViewComponent', () => {
-  let component: RentabiliteViewComponent;
-  let fixture: ComponentFixture<RentabiliteViewComponent>;
+describe('DetailBienComponent', () => {
+  let component: DetailBienComponent;
+  let fixture: ComponentFixture<DetailBienComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RentabiliteViewComponent ]
+      declarations: [ DetailBienComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RentabiliteViewComponent);
+    fixture = TestBed.createComponent(DetailBienComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

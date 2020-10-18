@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { RentabiliteService } from '../services/rentabilite.service'
 
 @Component({
-  selector: 'app-detail-rentabilite',
-  templateUrl: './detail-rentabilite.component.html',
-  styleUrls: ['./detail-rentabilite.component.scss']
+  selector: 'app-detail-bien',
+  templateUrl: './detail-bien.component.html',
+  styleUrls: ['./detail-bien.component.scss']
 })
-export class DetailRentabiliteComponent implements OnInit {
+export class DetailBienComponent implements OnInit {
 
   name: string = "Rentabilité";
   prixBien: number = 100000;

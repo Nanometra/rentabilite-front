@@ -1,4 +1,9 @@
+import { Subject } from 'rxjs';
+import { Bien } from '../interface/bien';
+
 export class RentabiliteService {
+
+bienSubject = new Subject<Bien[]>();
 
 loyers = [
     {
@@ -11,7 +16,7 @@ loyers = [
     }
 ]
 
-    biens = [
+    private biens = [
         {
             id: 1,
             name: "Premier bien",

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DetailRentabiliteComponent } from './detail-rentabilite.component';
+import { BienListComponent } from './bien-list.component';
 
-describe('DetailRentabiliteComponent', () => {
-  let component: DetailRentabiliteComponent;
-  let fixture: ComponentFixture<DetailRentabiliteComponent>;
+describe('BienListComponent', () => {
+  let component: BienListComponent;
+  let fixture: ComponentFixture<BienListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailRentabiliteComponent ]
+      declarations: [ BienListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DetailRentabiliteComponent);
+    fixture = TestBed.createComponent(BienListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

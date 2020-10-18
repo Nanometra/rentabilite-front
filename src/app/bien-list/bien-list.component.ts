@@ -3,11 +3,11 @@ import { RentabiliteService } from '../services/rentabilite.service';
 import { Loyer } from '../interface/loyer'
 
 @Component({
-  selector: 'app-rentabilite-view',
-  templateUrl: './rentabilite-view.component.html',
-  styleUrls: ['./rentabilite-view.component.scss']
+  selector: 'app-bien-list',
+  templateUrl: './bien-list.component.html',
+  styleUrls: ['./bien-list.component.scss']
 })
-export class RentabiliteViewComponent implements OnInit {
+export class BienListComponent implements OnInit {
 
   @Input() id: number;
   @Input() index: number;

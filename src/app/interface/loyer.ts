@@ -1,4 +1,6 @@
 export interface Loyer {
     id: number;
-    loyer: number;
+    montantHC: number;
+    montantCC: number;
+    charges: number;
 }
