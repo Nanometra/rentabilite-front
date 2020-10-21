@@ -1,7 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BienService } from '../services/bien.service';
-import { Bien } from '../interface/bien';
+import { Bien } from '../../interface/bien';
 
+/**
+ * Ce composant est un simple composant graphique en opposition
+ * à Smart Component. Il sert simplement à factorisé le template pour la lisibilité
+ * il n'a pas besoin de dépendre du service.
+ */
 @Component({
   selector: 'app-bien',
   templateUrl: './bien.component.html',
@@ -11,23 +15,15 @@ export class BienComponent implements OnInit {
 
   @Input()
   bien: Bien;
-  
+
   @Input()
   index: number;
   
-  rentabilite: number;
-  loyerAnnuelCalcule: number;
   isRentable: boolean;
-  prixAuMetreCarre: number;
-  prixNotaire: number;
 
-  constructor(private bienService: BienService) { }
+  constructor() { }
 
   ngOnInit(): void {
-   this.bien = this.bienService.getBienById(this.index);
   }
-
-  
-
 
 }
