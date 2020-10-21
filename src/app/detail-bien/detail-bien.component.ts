@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RentabiliteService } from '../services/rentabilite.service'
+import { BienService } from '../services/bien.service'
 
 @Component({
   selector: 'app-detail-bien',
@@ -9,15 +9,15 @@ import { RentabiliteService } from '../services/rentabilite.service'
 })
 export class DetailBienComponent implements OnInit {
 
-  name: string = "Rentabilité";
-  prixBien: number = 100000;
+  nom: string = "Rentabilité";
+  prixFAI: number = 100000;
 
-  constructor(private rentabiliteService: RentabiliteService, private route:ActivatedRoute) { }
+  constructor(private bienService: BienService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    this.name = this.rentabiliteService.getRentabiliteById(+id).name;
-    this.prixBien = this.rentabiliteService.getRentabiliteById(+id).prixBien;
+    this.nom = this.bienService.getBienById(+id).nom;
+    this.prixFAI = this.bienService.getBienById(+id).prixFAI;
   }
 
 }

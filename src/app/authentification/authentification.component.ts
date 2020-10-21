@@ -27,7 +27,7 @@ export class AuthentificationComponent implements OnInit {
       () => {
         console.log("Authentification réussie");
         this.authentificationStatus = this.authentificationService.isAuth;
-        this.router.navigate(['rentabilite']);
+        this.router.navigate(['biens']);
       }
     );
 

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RentabiliteService } from '../services/rentabilite.service';
-import { Loyer } from '../interface/loyer'
+import { BienService } from '../services/bien.service';
+import { Bien } from '../interface/bien';
 
 @Component({
   selector: 'app-bien',
@@ -9,23 +9,25 @@ import { Loyer } from '../interface/loyer'
 })
 export class BienComponent implements OnInit {
 
-  @Input() id: number;
-  @Input() prixBien: number;
-  @Input() loyers: Loyer[] = [];
-  @Input() loyerAnnuelCalcule: number;
-  @Input() loyerAnnuelIndique: number;
-  @Input() rentabilite: number;
+  @Input()
+  bien: Bien;
+  
+  @Input()
+  index: number;
+  
+  rentabilite: number;
+  loyerAnnuelCalcule: number;
   isRentable: boolean;
-  @Input() index: number;
-  biens: any[];
-  @Input() nom: string;
+  prixAuMetreCarre: number;
+  prixNotaire: number;
 
-  constructor(private rentabiliteService: RentabiliteService) { }
+  constructor(private bienService: BienService) { }
 
   ngOnInit(): void {
-    this.biens = this.rentabiliteService.biens;
+   this.bien = this.bienService.getBienById(this.index);
   }
 
+  
 
 
 }

@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RentabiliteService } from '../services/rentabilite.service';
+import { BienService } from '../services/bien.service';
 import { Loyer } from '../interface/loyer'
+import { Bien } from '../interface/bien';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-bien-list',
@@ -9,21 +11,18 @@ import { Loyer } from '../interface/loyer'
 })
 export class BienListComponent implements OnInit {
 
-  @Input() id: number;
-  @Input() index: number;
-  @Input() prixBien: number;
-  loyers: Loyer[] = [];
-  @Input() loyerAnnuelCalcule: number;
-  @Input() loyerAnnuelIndique: number;
-  @Input() rentabilite: number;
-  isRentable: boolean;
-  biens: any[];
+  biens: Bien[];
+  bienSuscription: Subscription;
 
-  constructor(private rentabiliteService: RentabiliteService) { }
+  constructor(private bienService: BienService) { }
 
   ngOnInit(): void {
-    this.loyers = this.rentabiliteService.loyers;
-    this.biens = this.rentabiliteService.biens;
+    this.bienSuscription = this.bienService.bienSubject.subscribe(
+      (biens: Bien[]) => {
+        this.biens = biens;
+      }
+    )
+    this.bienService.emitBienSubject();
   }
 
 }

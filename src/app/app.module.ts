@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
-import { RentabiliteService } from './services/rentabilite.service';
+import { BienService } from './services/bien.service';
 import { BienListComponent } from './bien-list/bien-list.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { AuthentificationService } from './services/authentification.service';
@@ -31,7 +31,7 @@ import { AuthGuard } from './services/auth-guard.service';
     FormsModule
   ],
   providers: [
-    RentabiliteService,
+    BienService,
     AuthentificationService,
     AuthGuard
   ],
