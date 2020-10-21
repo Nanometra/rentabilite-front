@@ -1,6 +1,6 @@
-<p>{{ nom }}</p>
-<p>{{ prixBien }}</p>
-<a [routerLink]="id">Détail</a>
+<p>{{ bien.name }}</p>
+<p>{{ bien.prixFAI }}</p>
+<a [routerLink]="['/biens', bien.id]">Détail</a>
 
 <!--<form>
     <div class="form-group">

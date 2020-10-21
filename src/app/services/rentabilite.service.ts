@@ -1,41 +1,44 @@
-import { Subject } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Bien } from '../interface/bien';
+import { Loyer } from '../interface/loyer';
 
 export class RentabiliteService {
 
-bienSubject = new Subject<Bien[]>();
+    private loyers: Loyer[] = [
+        {
+            id: 1,
+            montantCC: 300
+        },
+        {
+            id: 2,
+            montantCC: 300
+        }
+    ]
 
-loyers = [
-    {
-        id: 1,
-        loyer: 300
-    },
-    {
-        id: 2,
-        loyer: 300
-    }
-]
-
-    private biens = [
+    private biens: Bien[] = [
         {
             id: 1,
             name: "Premier bien",
-            prixBien: 100000
+            prixFAI: 100000
         },
         {
             id: 2,
             name: "Second bien",
-            prixBien: 145000
+            prixFAI: 145000
         }
     ];
 
-    getRentabiliteById(id:number) {
-        const bien = this.biens.find(
-            (s) => {
-                return s.id === id;
-            }
-        );
-        return bien;
+    getLoyers(): Observable<Array<Loyer>> {
+        return of(this.loyers);
+    }
+
+    getBiens(): Observable<Array<Bien>> {
+        return of(this.biens);
+    }
+
+    getRentabiliteById(id: string): Observable<Bien> {
+        const bien = this.biens.find(s => s.id === +id);
+        return of(bien);
     }
 
 }

@@ -1,8 +1,8 @@
 export interface Bien {
     id: number;
     name: string;
+    surface?: number;
     prixFAI: number;
-    surface: number;
-    prixAuMetreCarre: number;
-    prixNotaire: number;
+    prixAuMetreCarre?: number; // ça me semble être un champ dérivé?
+    prixNotaire?: number;
 }

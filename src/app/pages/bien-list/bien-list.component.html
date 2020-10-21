@@ -4,10 +4,8 @@
         <h2>Calcul de rentabilité</h2>
         <ul class="list-group">
         <app-bien *ngFor="let bien of biens; let i = index"
-                          [nom]="bien.name"
-                          [prixBien]="bien.prixBien"
-                          [index]="i"
-                          [id]="bien.id">
+                          [bien]="bien"
+                          [index]="i">
         </app-bien>
         </ul>
       </div>

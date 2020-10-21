@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RentabiliteService } from '../services/rentabilite.service'
+import { RentabiliteService } from '../../services/rentabilite.service'
 
 @Component({
   selector: 'app-detail-bien',
@@ -16,8 +16,13 @@ export class DetailBienComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    this.name = this.rentabiliteService.getRentabiliteById(+id).name;
-    this.prixBien = this.rentabiliteService.getRentabiliteById(+id).prixBien;
+    // suppression '+' id n'a pas à être un entier, on va pas faire de calcul avec
+    // il vaudrait d'ailleur mieux qu'il soit une string du point de vue du front, ça laisse plus de flexibilité
+    // pour utiliser des UUID par la suite
+    this.rentabiliteService.getRentabiliteById(id).subscribe(bien => {
+      this.name = bien.name;
+      this.prixBien = bien.prixFAI;
+    });
   }
 
 }

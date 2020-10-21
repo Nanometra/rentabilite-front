@@ -6,12 +6,12 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { RentabiliteService } from './services/rentabilite.service';
-import { BienListComponent } from './bien-list/bien-list.component';
-import { AuthentificationComponent } from './authentification/authentification.component';
+import { BienListComponent } from './pages/bien-list/bien-list.component';
+import { AuthentificationComponent } from './pages/authentification/authentification.component';
 import { AuthentificationService } from './services/authentification.service';
-import { DetailBienComponent } from './detail-bien/detail-bien.component'
-import { BienComponent } from './bien/bien.component';
-import { QuatreCentQuatreComponent } from './quatre-cent-quatre/quatre-cent-quatre.component';
+import { DetailBienComponent } from './pages/detail-bien/detail-bien.component'
+import { BienComponent } from './components/bien/bien.component';
+import { QuatreCentQuatreComponent } from './pages/quatre-cent-quatre/quatre-cent-quatre.component';
 import { AuthGuard } from './services/auth-guard.service';
 
 
