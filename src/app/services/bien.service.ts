@@ -50,8 +50,8 @@ private loyers = [
         return of(this.biens);
     }
 
-    getRentabiliteById(id: string): Observable<Bien> {
+    getBienById(id: string): Observable<Bien> {
         const bien = this.biens.find(s => s.id === +id);
         return of(bien);
-
+    }
 }

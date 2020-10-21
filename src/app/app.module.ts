@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { BienService } from './services/bien.service';
-import { BienListComponent } from './bien-list/bien-list.component';
+import { BienListComponent } from './pages/bien-list/bien-list.component';
 import { AuthentificationComponent } from './pages/authentification/authentification.component';
 import { AuthentificationService } from './services/authentification.service';
 import { DetailBienComponent } from './pages/detail-bien/detail-bien.component'

@@ -9,7 +9,7 @@ import { BienService } from '../../services/bien.service'
 })
 export class DetailBienComponent implements OnInit {
 
-  nom: string = "Rentabilité";
+  nom: string = "Premier Bien";
   prixFAI: number = 100000;
 
   constructor(private bienService: BienService, private route:ActivatedRoute) { }
@@ -20,8 +20,8 @@ export class DetailBienComponent implements OnInit {
     // il vaudrait d'ailleur mieux qu'il soit une string du point de vue du front, ça laisse plus de flexibilité
     // pour utiliser des UUID par la suite
     this.bienService.getBienById(id).subscribe(bien => {
-      this.name = bien.nom;
-      this.prixBien = bien.prixFAI;
+      this.nom = bien.nom;
+      this.prixFAI = bien.prixFAI;
     });
   }
 
