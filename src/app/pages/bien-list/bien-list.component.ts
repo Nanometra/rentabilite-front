@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RentabiliteService } from '../../services/rentabilite.service';
+import { BienService } from '../../services/bien.service';
 import { Loyer } from '../../interface/loyer'
 import { Bien } from '../../interface/bien';
 
@@ -13,13 +13,13 @@ export class BienListComponent implements OnInit {
   loyers: Loyer[] = [];
   biens: Bien[];
 
-  constructor(private rentabiliteService: RentabiliteService) { }
+  constructor(private bienService: BienService) { }
 
   ngOnInit(): void {
-    this.rentabiliteService.getLoyers().subscribe(loyers => {
+    this.bienService.getLoyers().subscribe(loyers => {
       this.loyers = loyers;
     });
-    this.rentabiliteService.getBiens().subscribe(biens => {
+    this.bienService.getBiens().subscribe(biens => {
       this.biens = biens;
     });
   }

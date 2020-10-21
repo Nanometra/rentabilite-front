@@ -1,5 +1,6 @@
 import { Observable, of, Subject } from 'rxjs';
 import { Bien } from '../interface/bien';
+import { Loyer } from '../interface/loyer';
 
 export class BienService {
 
@@ -41,21 +42,16 @@ private loyers = [
         }
     ]
 
-    emitBienSubject() {
-        this.bienSubject.next(this.biens.slice());
+    getLoyers(): Observable<Array<Loyer>> {
+        return of(this.loyers);
     }
 
-    getBienById(id:number) : Observable<Bien> {
-        const bien = this.biens.find(
-            (s) => {
-                return s.id === +id;
-            }
-        );
+    getBiens(): Observable<Array<Bien>> {
+        return of(this.biens);
+    }
+
+    getRentabiliteById(id: string): Observable<Bien> {
+        const bien = this.biens.find(s => s.id === +id);
         return of(bien);
-    }
-
-    getAllBiens() {
-        return this.biens;
-    }
 
 }
